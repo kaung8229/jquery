@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>:enable & :disabled selector</title>
+        <style>
+
+            *{
+                box-sizing: border-box;
+            }
+
+            body{
+                height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container{
+                width: 900px;
+                background: #f4f4f4;
+            }
+
+            form{
+                padding: 20px;
+            }
+
+            .form-group{
+                margin: 10px 0;
+            }
+
+            .form-group label{
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .form-control{
+                width: 100%;
+                padding: 5px;
+            }
+
+        </style>
+    </head>
+    <body>
+        
+        <div class="container">
+
+            <form action="" method="">
+
+                <div class="form-group">
+                    <label for="firstname">First name</label>
+                    <input type="text" name="firstname" id="firstname" class="form-control" autocomplete="off" />
+                </div>
+
+                <div class="form-group">
+                    <label for="lastname">Last name</label>
+                    <input type="text" name="lastname" id="lastname" class="form-control" autocomplete="off" disabled />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" class="form-control" autocomplete="off" />
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" autocomplete="off" disabled />
+                </div>
+
+                <input type="submit" class="btn disabled" value="Disabled">
+                <button type="submit" class="btn enabled">Enabled</button>
+
+            </form>
+
+        </div>
+
+        <script src="./libs/jquery-3.6.0.min.js"></script>
+        <script>
+
+            $(document).ready(function(){
+
+                // console.log("H")
+
+                // :diabled
+                $('.disabled').click(function(e){
+                    e.preventDefault();
+
+                    $(':disabled').css({
+                        'background':'yellow',
+                        border: '1px solid red'
+                    })
+                })
+
+                // :enabled
+                $('.enabled').click(function(e){
+                    e.preventDefault();
+
+                    // $(':enabled').css({
+                    //     'background':'violet',
+                    //     border: '1px solid red'
+                    // })
+
+                    $(':enabled:not(.btn)').css({
+                        'background':'violet',
+                        border: '1px solid red'
+                    })
+                })
+
+            })
+
+        </script>
+    </body>
+</html>

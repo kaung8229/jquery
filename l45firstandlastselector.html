@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>:first & :last selector</title>
+    <style>
+
+        body{
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1>My Fav Colors</h1>
+        <ul>
+            <li>Red</li>
+            <li>Blue</li>
+            <li>Pink</li>
+            <li></li>
+            <li>Yellow</li>
+            <li>White</li>
+            <li></li>
+            <li>Vilet</li>
+        </ul>
+
+        <hr/>
+
+        <h1>My Fav Fruits</h1>
+        <ol>
+            <li>Apple</li>
+            <li>Orange</li>
+            <li></li>
+            <li></li>
+            <li>Banana</li>
+            <li></li>
+            <li>Lemon</li>
+        </ol>
+
+    </div>
+
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            // console.log("he");
+
+            // :first
+            // $('ul li:first').css('background','red');
+            $('li:first').css('background','orange');
+
+
+            // :last
+            // $('ol li:last').css('background','red');
+            $('li:last').css('background','orange');
+
+        })
+
+    </script>
+</body>
+</html>

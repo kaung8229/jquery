@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UI Progress</title>
+
+        <!-- jQuery ui css1 js1 -->
+        <link href="./libs/jquery-ui-1.13.1/jquery-ui.min.css" rel="stylesheet" type="text/css">
+
+        <style type="text/css">
+
+            body{
+                height: 100vh;
+                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .container{
+                width: 700px;
+            }
+
+        </style>
+    </head>
+    <body>
+        
+        <div class="container">
+
+            <h2>HTML</h2>
+            <div id="progress1"></div>
+
+            <h2>CSS</h2>
+            <div id="progress2"></div>
+
+            <h2>jQuery</h2>
+            <div id="progress3"></div>
+
+            <h2>Javascript</h2>
+            <div id="progress4"></div>
+
+            <h2>Bootstrap</h2>
+            <div id="progress5"></div>
+
+        </div>
+
+        <!-- jQuery js1 -->
+        <script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+        <!-- jQuery ui css1 js1 -->
+        <script src="./libs/jquery-ui-1.13.1/jquery-ui.min.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+
+                // console.log("h");
+
+                $('#progress1').progressbar({
+                    value: 30
+                }).css({
+                    "background-color":"#f4f4f4" // for parent box
+                });
+                // color for liquid
+                $('#progress1 > div').css("background","red");
+
+
+                $('#progress2').progressbar({
+                    value: 20
+                });
+
+
+                $('#progress3').progressbar({
+                    value: 40
+                });
+
+                
+                $('#progress4').css({
+                    height: "20px",
+                    backgroundColor: "#e2e2e2"
+                }).progressbar({
+                    value: 50
+                });
+                $('#progress4 > div').css("background-color","cyan");
+
+
+                $('#progress5').progressbar({
+                    value: 40
+                }).css({
+                    // "background":`radial-gradient(silver, gray)`
+
+
+                    "background":"url(./arrow.png)",
+
+                    "background-repeat":"repeat-x",
+                    "background-size":"100px",
+                    "background-position": "center"
+                    
+
+
+                });
+                $('#progress5 > div').css('background',"skyblue")
+
+
+            })
+
+        </script>
+    </body>
+</html>

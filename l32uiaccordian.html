@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UI Accordian</title>
+
+    <!-- jQuery ui css1 js1 -->
+    <link rel="stylesheet" href="./libs/jquery-ui-1.13.1/jquery-ui.min.css" type="text/css">
+
+    <!-- jQuery custom ui css1 js1 -->
+    <!-- <link rel="stylesheet" href="./libs/jquery-ui-1.13.1.custom/jquery-ui.min.css"> -->
+
+    <style>
+        body{
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            width: 900px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div id="myacc">
+            <h2>FAQ : Get started with jQuery UI</h2>
+
+            <div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, in quidem beatae fugiat consequuntur sunt, deleniti repudiandae laudantium quos cum similique vitae quasi eius veniam quam praesentium! Distinctio totam atque voluptate, odio assumenda architecto. Similique corporis non, suscipit molestiae vel laudantium a amet quam quaerat sint nesciunt repellat distinctio ipsam?</p>
+            </div>
+
+
+            <h2>FAQ : How to use jQuery UI</h2>
+
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis consectetur delectus vitae sed odit harum in amet deserunt doloribus expedita. Ex assumenda harum vero ipsam dolorem omnis voluptatem, aliquid libero?
+                    <hr/>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet iure non fugit modi quas omnis quis inventore perspiciatis laborum expedita porro explicabo illum reiciendis perferendis natus nihil laudantium, nam magnam numquam aliquam aperiam. Vel non, assumenda nulla mollitia perspiciatis debitis.</p>
+            </div>
+
+
+            <h2>FAQ : Found a bug?</h2>
+
+            <div>
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis consectetur delectus vitae sed odit harum in amet deserunt doloribus expedita. Ex assumenda harum vero ipsam dolorem omnis voluptatem, aliquid libero?
+                </h4>
+                <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet iure non fugit modi quas omnis quis inventore perspiciatis laborum expedita porro explicabo illum reiciendis perferendis natus nihil laudantium, nam magnam numquam aliquam aperiam. Vel non, assumenda nulla mollitia perspiciatis debitis.</p>
+            </div>
+
+
+
+            <h2>FAQ : What is next step?</h2>
+
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis consectetur delectus vitae sed odit harum in amet deserunt doloribus expedita. Ex assumenda harum vero ipsam dolorem omnis voluptatem, aliquid libero?
+                </p>
+                <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet iure non fugit modi quas omnis quis inventore perspiciatis laborum expedita porro explicabo illum reiciendis perferendis natus nihil laudantium, nam magnam numquam aliquam aperiam. Vel non, assumenda nulla mollitia perspiciatis debitis.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- jQuery js1 -->
+    <script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+    <!-- jQuery ui css1 js1 -->
+    <script src="./libs/jquery-ui-1.13.1/jquery-ui.min.js" type="text/javascript"></script>
+
+    <!-- jQuery custom ui css1 js1 -->
+    <!-- <script src="./libs/jquery-ui-1.13.1.custom/jquery-ui.min.js"></script> -->
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            // console.log("H");
+            $('#myacc').accordion();
+
+        })
+
+    </script>
+
+</body>
+</html>

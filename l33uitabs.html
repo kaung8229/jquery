@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UI Tabs</title>
+
+        <!-- jQuery ui css1 js1 -->
+        <link href="./libs/jquery-ui-1.13.1/jquery-ui.min.css" rel="stylesheet" type="text/css">
+
+        <style type="text/css">
+
+            body{
+                height: 100vh;
+                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container{
+                width: 900px;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            
+            <div class="mytabs">
+                <ul>
+                    <li><a href="#tabs1">Summary</a></li>
+                    <li><a href="#tabs2">About</a></li>
+                    <li><a href="#tabs3">Detail Info</a></li>
+                </ul>
+    
+                <div id="tabs1">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ad, aut optio quidem alias commodi? Dolore et ratione cumque soluta voluptatem, deserunt quasi iusto numquam harum dolor doloribus ullam impedit? Esse, minima ea! Optio, ad doloribus a non sed neque odio dolorum repellendus ea quo vitae esse, libero labore tenetur.</p>
+                </div>
+                <div id="tabs2">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quo iste dolorum cumque reprehenderit doloremque rerum aspernatur neque facilis exercitationem. Quos eius fugiat cumque quas obcaecati in mollitia consequatur. Adipisci explicabo enim porro voluptatibus, aperiam, aliquid tenetur odio expedita, optio blanditiis animi voluptatem maxime voluptatum iusto eos distinctio quidem possimus!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quo iste dolorum cumque reprehenderit doloremque rerum aspernatur neque facilis exercitationem. Quos eius fugiat cumque quas obcaecati in mollitia consequatur. Adipisci explicabo enim porro voluptatibus, aperiam, aliquid tenetur odio expedita, optio blanditiis animi voluptatem maxime voluptatum iusto eos distinctio quidem possimus!</p>
+                </div>
+                <div id="tabs3">
+                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa commodi maxime iure ut itaque libero est nemo aliquid quibusdam cum, odio quisquam nostrum veritatis exercitationem aliquam nihil eos iusto autem.</h4>
+                    <ul>
+                        <li>Job Caption 1</li>
+                        <li>Job Caption 2</li>
+                        <li>Job Caption 3</li>
+                    </ul>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste velit architecto nemo magnam suscipit veniam necessitatibus natus est culpa repudiandae perferendis harum voluptates quidem dolores, tenetur et aliquam fugiat voluptatem repellendus rem quia tempora animi? Similique nemo aliquam reiciendis nostrum tempore minima fuga explicabo quidem, repudiandae, veritatis deleniti illum. Dolorem!</p>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- jQuery js1 -->
+        <script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+        <!-- jQuery ui css1 js1 -->
+        <script src="./libs/jquery-ui-1.13.1/jquery-ui.min.js" type="text/javascript"></script>
+
+
+        <script>
+
+            $(document).ready(function(){
+
+                // console.log("h");
+
+                $('.mytabs').tabs();
+
+            })
+
+        </script>
+    </body>
+</html>

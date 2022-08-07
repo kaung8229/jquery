@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>remove and empty method</title>
+    </head>
+    <body>
+        
+        <div>
+
+            <h1>Hello Heading Tag H1</h1>
+            <h2>Hello Heading Tag H2</h2>
+            <h3>Hello Heading Tag H3</h3>
+            <h2>Hello Heading Tag H2</h2>
+            <h1>Hello Heading Tag H1</h1>
+            <span>Hello I am span tag</span>
+
+        </div>
+
+        <div>
+
+            <h1>Hello Heading Tag H1</h1>
+            <h2>Hello Heading Tag H2</h2>
+            <h3>Hello Heading Tag H3</h3>
+            <h2 class="headingh2">Hello Heading Tag H2</h2>
+            <h1>Hello Heading Tag H1</h1>
+            <span>Hello I am span tag</span>
+
+        </div>
+
+        <button type="button" id="removebtn">Remove</button>
+        <button type="button" id="emptybtn">Empty</button>
+        <button type="button" id="detachbtn">Detach</button>
+        <button type="button" id="addbtn">Add</button>
+
+        <script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+            // $(window.document).ready(function{
+                // jQuery code here
+            // })
+
+            // jQuery(document).ready(function(){
+                // jQuery code here
+            // })
+
+            // jQuery(window.document).ready(function(){
+                // jQuery code here
+            // })
+
+            $(document).ready(function(){
+
+                // remove() -> self remove
+                $('#removebtn').click(function(){
+
+                    // $('h1').remove();
+                    // $('h2').remove();
+
+                    // $('h1,h2').remove();
+
+                })
+
+
+                // empty() -> all child remove
+                $('#emptybtn').click(function(){
+
+                    $('div').empty();
+
+                })
+
+
+
+                // detach() -> remove self
+                $("#detachbtn").click(function(){
+
+                    $('div').detach();
+
+                })
+
+
+
+                // add() -> add more selectors
+                $('#addbtn').click(function(){
+
+                    // $('h1').css({
+                    //     "background-color": "yellow",
+                    //     "border": "3px dashed red"
+                    // })
+
+                    // $('h1,.headingh2').css({
+                    //     "background-color": "yellow",
+                    //     "border": "3px dashed red"
+                    // })
+
+                    // $('h1,h2,h3').css({
+                    //     "background-color": "yellow",
+                    //     "border": "3px dashed red"
+                    // })
+
+                    // $('h1,span').css({
+                    //     "background-color": "yellow",
+                    //     "border": "3px dashed red"
+                    // })
+
+
+
+                    // add()
+                    // $('h1').add('span').css({
+                    //     "background-color": "yellow",
+                    //     "border": "3px dashed red"
+                    // })
+
+
+                    // add() -> more selector
+                    // $('h1').add('span,h2').css({
+                    //     "background-color": "yellow",
+                    //     "border": "3px dashed red"
+                    // })
+
+                    // $('h1,h3').add('span,h2').css({
+                    //     "background-color": "yellow",
+                    //     "border": "3px dashed red"
+                    // })
+
+
+                    $('h1').add('span').add('h2').css({
+                        "background-color": "yellow",
+                        "border": "3px dashed red"
+                    })
+
+                })
+                
+
+
+            })
+            
+        </script>
+        
+    </body>
+</html>

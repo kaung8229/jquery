@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disabled selection</title>
+
+</head>
+<body>
+    
+    <div class="box1">
+        <h3>jQuery Extension functions</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur repellendus praesentium necessitatibus. Possimus est odit assumenda exercitationem corrupti maxime animi.</p>
+    </div>
+
+    <div class="box2">
+        <h3>jQuery Extension functions</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur repellendus praesentium necessitatibus. Possimus est odit assumenda exercitationem corrupti maxime animi.</p>
+    </div>
+
+    <div class="box3">
+        <h3>jQuery Extension functions</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur repellendus praesentium necessitatibus. Possimus est odit assumenda exercitationem corrupti maxime animi.</p>
+    </div>
+
+    <script src="../libs/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            // console.log("He");
+
+            // jQuery extensioni function
+
+            // jQuery.fn.extend()
+            $.fn.extend({
+                disabledselectionbox1: function(){
+                    return this.css("user-select","none")
+                },
+                selectionbox2:function(){
+                    return this.css({
+                        'background-color':'green',
+                        color: "#fff"
+                    })
+                }
+            })
+
+
+            // $.fn
+            jQuery.fn.disabledselectionbox3 = function(){
+                return this.css("user-select",'none');
+            }
+
+            $(".box1").disabledselectionbox1();
+            $('.box2').selectionbox2();
+            $('.box3').disabledselectionbox3();
+
+        })
+
+    </script>
+</body>
+</html>

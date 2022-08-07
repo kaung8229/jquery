@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Three View</title>
+        <style>
+
+            body{
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container{
+                width: 700px;
+            }
+
+            .browserpanel{
+                border: 3px solid #f3f3f3;
+                border-radius: 5px 5px 0 0;
+            }
+
+            .tabbar{
+                padding: 10px;
+                background: #f1f1f1;
+                border-radius: 3px 3px 0 0;
+            }
+
+            .dot{
+                width: 10px;
+                height: 10px;
+                background: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+            }
+
+            .content{
+                padding: 20px;
+            }
+
+            ul{
+                list-style: none;
+            }
+
+            .bigcap{
+                cursor: pointer;
+            }
+
+            .bigcap::before{
+                content: "\25B6";
+                font-family: 'Font Awesome 5 Free';
+                margin-right: 6px;
+                display: inline-block;
+            }
+            .bigcap.godown::before{
+                transform: rotate(90deg);
+            }
+
+            .nested{
+                display: none;
+            }
+
+            .active{
+                display: block;
+            }
+
+        </style>
+    </head>
+    <body>
+        
+        <div class="container">
+
+            <div class="browserpanel">
+
+                <div class="tabbar">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+
+                <div class="content">
+
+                    <h3>Ms.July</h3>
+                    <p>Chief Technology Officer</p>
+
+                    <ul>
+                        <li><span class="bigcap godown">Summary Bio</span>
+                            <ul class="nested active">
+                                <li>Age : 35</li>
+                                <li>Marital Status : Married</li>
+                                <li>Nationality : Japanese</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li><span class="bigcap">Working Experiences</span>
+                            <ul class="nested">
+                                <li><span class="bigcap">2020</span>
+                                    <ul class="nested">
+                                        <li>2020 - Project Director At SUDO Technology Co.,Ltd.</li>
+                                        <li>2018 - Project Director At BARBU Technology Co.,Ltd.</li>
+                                        <li><span class="bigcap">2015</span>
+                                            <ul class="nested">
+                                                <li>2013 - Project Director At YUKI Technology Co.,Ltd.</li>
+                                                <li>2010 - Project Director At MULIE Technology Co.,Ltd.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <script src="../libs/jquery-3.6.0.min.js"></script>
+        <script>
+
+            $(document).ready(function(){
+
+                // console.log("Hey");
+
+                $('.bigcap').click(function(){
+                    $(this).toggleClass('godown');
+                    $(this).siblings().toggleClass('active');
+                })
+
+            })
+
+        </script>
+    </body>
+</html>

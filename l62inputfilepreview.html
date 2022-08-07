@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Files Preview</title>
+    <style>
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            width: 800px;
+            background: #f3f3f3;
+            padding: 20px;
+        }
+
+        .form-group label{
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-control{
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .justify-content-end{
+            display: flex;
+            justify-content: end;
+        }
+
+        .gallery{
+            width: 100%;
+            background: #eee;
+            padding: 20px;
+            color: #aaa;
+            text-align: center;
+        }
+
+        .gallery img{
+            width: 100px;
+            height: 100px;
+            border: 2px dashed #aaa;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 0 5px;
+            object-fit: cover;
+        }
+
+        .removetxt span{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+
+        <form action="" method="" enctype="multipart/form-data">
+
+            <div class="form-group">
+                <label for="coverphotos">Cover Photo</label>
+                <input type="file" name="coverphotos[]" id="coverphotos" class="form-control" multiple />
+            </div>
+
+            <div class="justify-content-end">
+                <button type="button" class="btn">Upload</button>
+            </div>
+
+        </form>
+
+        <div class="gallery">
+            <span>Choose Images</span>
+        </div>
+
+    </div>
+
+    <script src="../libs/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            // console.log("he");
+
+
+            var previewimages = function(input,output){
+
+                // console.log(input.files);
+
+                if(input.files){
+
+                    var totalfiles = input.files.length;
+                    // console.log(totalfiles);
+
+                    if(totalfiles > 0){
+                        $('.gallery').addClass('removetxt');
+                    }else{
+                        $('.gallery').removeClass('removetxt');
+                    }
+
+                    for(var i = 0; i < totalfiles; i++){
+
+                        var filereader = new FileReader();
+
+                        // console.log("h")
+
+                        filereader.onload = function(e){
+                            // console.log(e.target.result);
+                            $($.parseHTML("<img>")).attr('src',e.target.result).appendTo(output);
+                        }
+
+                        filereader.readAsDataURL(input.files[i]);
+                    }
+
+                }
+
+            }
+
+            $('#coverphotos').change(function(){
+                previewimages(this,'.gallery');
+            })
+
+        })
+
+    </script>
+</body>
+</html>

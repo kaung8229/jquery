@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>:empty & :not selector</title>
+    <style>
+
+        body{
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box{
+            width: 200px;
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1>My Fav Colors</h1>
+        <ul>
+            <li>Red</li>
+            <li>Blue</li>
+            <li>Pink</li>
+            <li></li>
+            <li>Yellow</li>
+            <li>White</li>
+            <li></li>
+            <li>Vilet</li>
+        </ul>
+
+        <hr/>
+
+        <h1>My Fav Fruits</h1>
+        <ol>
+            <li>Apple</li>
+            <li>Orange</li>
+            <li></li>
+            <li></li>
+            <li>Banana</li>
+            <li></li>
+        </ol>
+
+        <hr/>
+
+        <div>
+            <p class="box"></p>
+
+            <p>Hello i am p tag, inside of div</p>
+
+            <p></p>
+        </div>
+
+        <div class="box"></div>
+
+        <p class="box"></p>
+
+    </div>
+
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            // console.log("he");
+
+
+            // :empty
+            // $(':empty').css('background','red');
+            // $('ul li:empty').css('background','red');
+            // $('ol li:empty').css('background','red');
+
+            // $('p:empty').css('background','red')
+
+
+
+            // :not()
+            // $('li:not(ol li)').css('background','red')
+            // $('li:not(ul li)').css('background','orange')
+
+            // $('li:not(ul li:empty)').css('background','red');
+            $('li:not(:empty)').css('background','red');
+
+
+        })
+
+    </script>
+</body>
+</html>

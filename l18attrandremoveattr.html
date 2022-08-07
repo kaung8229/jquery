@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>attr and remove attr method</title>
+    <style>
+
+        body{
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            width: 800px;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+
+        .text-primary{
+            color: blue;
+        }
+
+        .text-light{
+            color: white;
+        }
+
+        .bg-info{
+            background-color: lightskyblue;
+        }
+
+        .text-center{
+            text-align: center;
+        }
+
+        .underline{
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div>
+            <img src="./img/logo1.png" alt="" width="100px">
+            <h1 id="1">Hello Myanmar</h1>
+            <h1 id="1">Hello Thailand</h1>
+            <h1 id="1">Hello Indonesia</h1>
+            <h1 id="1">Hello Srilanka</h1>
+        </div>
+
+        <button type="button" id="textpri">text-primary</button>
+        <button type="button" id="bginfo">bg-info</button>
+        <button type="button" id="txtbg">textlighg-bginfo</button>
+        <button type="button" id="multibtn">multi attr</button>
+        <button type="button" id="rmattr">remove attr</button>
+
+        <button type="button" id="txtcnt">text-center</button>
+        <button type="button" id="rmtxtlight">remove text-light</button>
+        <button type="button" id="hasclass">has class</button>
+        <button type="button" id="togclass">toggle class</button>
+
+    </div>
+    
+
+    <script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            // console.log("helo")
+
+            // $(selector).attr(attrname , value)
+            $('#textpri').click(function(){
+                $('h1').attr('class','text-primary')
+            })
+
+            $('#bginfo').click(function(){
+                $('h1').attr('class','bg-info')
+            })
+
+            // for multi value
+            $('#txtbg').click(function(){
+                $('h1').attr('class','text-light bg-info')
+            })
+
+
+            // for multi attr name
+            $('#multibtn').click(function(){
+
+                $('img').attr({
+                    alt: "logo2",
+                    width: "150px",
+                    src: "./img/logo2.png",
+                    title: "This is a title",
+                    abc: "This is a abc"
+                })
+
+            })
+
+
+
+            // removeAttr()
+            // $('#rmattr').click(function(){
+            //     $('h1').removeAttr("class");
+            // })
+
+            // removeAttr() -> multi
+            $('#rmattr').click(function(){
+                $('h1').removeAttr("id class");
+            })
+
+
+            // ---------------------------------------------------
+            
+            //class Method
+
+            // addClass()
+            $('#txtcnt').click(function(){
+                // $('h1').addClass("text-center");
+
+                $('h1').addClass("text-center underline");
+
+            })
+
+            
+            // removeClass()
+            $('#rmtxtlight').click(function(){
+                // $('h1').removeClass('text-light');
+
+                $('h1').removeClass('text-light bg-info');
+            })
+
+
+            // hasClass()
+            $('#hasclass').click(function(){
+                window.alert($('h1').hasClass("text-center"));
+            })
+
+
+            // toggleClass()
+            $('#togclass').click(function(){
+                $('h1').toggleClass('text-center');
+            })
+
+        })
+
+    </script>
+
+</body>
+</html>

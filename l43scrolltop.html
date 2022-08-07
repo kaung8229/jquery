@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ScrollTop method</title>
+    <style>
+
+        body{
+            height: 100vh;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p{
+            width: 600px;
+            height: 200px;
+
+            overflow-y: scroll;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1>Scroll Top</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, sapiente doloremque? Accusantium velit optio molestias aspernatur aperiam quae. Ipsum consectetur ipsam nemo consequuntur commodi fuga quisquam consequatur ratione. Iusto quos qui unde voluptatibus suscipit sint, sunt quasi animi libero voluptate alias porro aut molestias commodi, ut sit explicabo id, tempora pariatur quas saepe dicta itaque molestiae accusantium. In eum ducimus tempore nemo minus ullam et accusantium temporibus rerum, voluptates voluptate enim debitis veritatis, iusto minima recusandae sit quia, sed dolores reprehenderit natus rem consequuntur dolor repellendus? Molestiae vitae tempore officia, eaque fugit minima quaerat quasi eius reprehenderit ipsam, nulla amet?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos veritatis assumenda eaque voluptatibus excepturi laborum distinctio. Ipsam, libero? Fugit deserunt repudiandae sint minus libero eaque corrupti commodi magni quo temporibus optio ut, doloremque cupiditate vel esse impedit aspernatur illo quia officiis architecto rem, maxime beatae! Sit inventore iste dolorum cum laborum corporis, at et, quia, velit eius voluptatum. Odit laboriosam eveniet, beatae temporibus molestiae nihil tempora reiciendis enim harum quaerat dicta! Ipsum explicabo nemo vitae adipisci dolore? Velit nostrum, dicta repudiandae reprehenderit ex adipisci nesciunt fuga molestias, itaque nihil deleniti excepturi at illo, doloremque voluptas unde consectetur totam mollitia magnam?</p>
+        <button class="btn">get scroll point</button>
+
+    </div>
+
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            // console.log("h");
+
+
+            $('.btn').click(function(){
+
+                console.log($('p').scrollTop() + " px");
+
+            })
+
+            $('p').scroll(function(){
+
+                console.log($(this).scrollTop());
+
+            })
+
+        })
+
+    </script>
+</body>
+</html>

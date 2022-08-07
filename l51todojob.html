@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cread New Job</title>
+        <style type="text/css">
+
+            *{
+                box-sizing: border-box;
+            }
+
+            body{
+                height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container{
+                width: 500px;
+                background: #f4f4f4;
+                padding: 20px;
+            }
+
+            .form-group{
+                margin: 20px 0;
+            }
+
+            .form-group label{
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .form-control{
+                width: 100%;
+                padding: 5px;
+            }
+
+        </style>
+    </head>
+    <body>
+        
+        <div class="container">
+
+            <form action="" method="">
+
+                <div class="form-group">
+                    <label for="todojob">Todo Job</label>
+                    <input type="text" name="todojob" id="todojob" class="form-control" placeholder="Enter your new job" />
+                </div>
+
+                <div class="form-group">
+                    <label for="joblist">Job List</label>
+                    <select name="joblist" id="joblist" class="form-control">
+                        <option selected disabled>Choose a job</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" disabled>Add new job</button>
+                </div>
+
+            </form>
+
+        </div>
+
+        <script src="./libs/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+
+                // console.log("he");
+
+                var phfortodojob = "Enter your new job";
+
+                $('#todojob').val(phfortodojob).focusin(function(){
+                    $(this).val('')
+                }).focusout(function(){
+                    if($.trim($(this).val()) !== ''){
+                        $('[type=submit]').removeAttr('disabled');
+                    }else{
+                        $('[type=submit]').attr('disabled',true);
+                    }
+                })
+
+
+
+
+                $('form').submit(function(e){
+
+                    e.preventDefault();
+                    // console.log("i am working");
+
+                    var gettodojob = $('#todojob');
+                    // console.log(gettodojob.val());
+
+                    // if($.trim(gettodojob.val()) !== ''){
+                    if($.trim(gettodojob.val()).length !== 0){
+
+                        if(window.confirm("Are you sure to add new job!!")){
+                            $('#joblist').append(`<option>${gettodojob.val()}</option>`);
+                            gettodojob.val('').focus();
+                        }else{
+                            window.alert("New job was canceled");
+                            gettodojob.val('');
+                            gettodojob.focus();
+                        }
+
+                    }else{
+                        window.alert('Write a new job!')
+                    }
+
+                })
+
+            })
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ui slider method</title>
+    <link rel="stylesheet" href="./libs/jquery-ui-1.13.1/jquery-ui.min.css" />
+    <style>
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            width: 900px;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .form-group{
+            margin: 10px 0;
+        }
+        .form-group label{
+            display: block;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .form-group .form-control{
+            width: 100%;
+            font-size: 20px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+
+        <form action="" method="">
+
+            <div class="form-group">
+                <label for="loan">Loan $ :</label>
+                <input type="text" name="loan" id="loan" class="form-control" value="10" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="myslider">Amount</label>
+                <div id="myslider"></div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="day">Days :</label>
+                <input type="text" name="day" id="day" class="form-control" value="Form 7 Days To 15 Days" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="term">Term</label>
+                <div id="term"></div>
+            </div>
+
+        </form>
+
+    </div>
+
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script src="./libs/jquery-ui-1.13.1/jquery-ui.min.js"></script>
+
+    <script>
+
+        $(document).ready(function(){
+
+            // console.log("h1");
+
+            $('#myslider').slider({
+                slide: function(e,ui){
+                    // console.log(e);
+                    // console.log(e.target);
+                    // console.log(ui);
+                    // console.log(ui.value);
+
+                    $('#loan').val(ui.value);
+                },
+                min: 0,
+                max: 100,
+                value: 10,
+                step: 10,
+
+                // orientation:'vertical',
+
+                change: function(e,ui){
+                    console.log('change'+ui.value);
+                },
+
+                start:function(e,ui){
+                    console.log('start ' + ui.value);
+                },
+
+                stop:function(e,ui){
+                    console.log('stop ' + ui.value);
+                }
+                
+            }).css("background-color","yellow");
+
+
+            // $('#myslider > span').css({
+            //     'background':"red"
+            // })
+
+            $('#myslider').children().css({
+                'background':"red"
+            })
+
+
+
+
+            $('#term').slider({
+                slide: function(e,ui){
+                    // console.log(e);
+                    // console.lgo(ui.value);
+
+                    $('#day').val('Form '+ui.values[0]+' Days To '+ui.values[1]+' Days');
+
+                },
+
+                min: 7,
+                max: 30,
+                step: 1,
+                values: [7,15],
+                range: true
+            }).css("background","yellow");
+
+            $('#term').children('span').css("background","red");
+            $('#term > div').css("background","red")
+
+        })
+
+    </script>
+</body>
+</html>

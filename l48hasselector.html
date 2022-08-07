@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>:has selector</title>
+    <style>
+
+        body{
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            width: 1200px;
+            background: #f4f4f4;
+            padding: 20px;
+
+            display: flex;
+        }
+
+        .box{
+            width: 200px;
+            height: 200px;
+            background: steelblue;
+            margin: 0 10px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="box box1">Box 1</div>
+        <div class="box box2"><p>Box 2</p></div>
+        <div class="box box3">Box 3</div>
+        <div class="box box4">Box 4</div>
+        <div class="box box5">Box 5</div>
+    </div>
+    
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            // console.log("h");
+
+            // :has()
+
+            // $(':has(.box3)').css('background','red'); // color filled to html
+
+            // $('div:has(.box3)').css('background','red'); // filled to parent of .box3
+
+            // $('div:has(p)').css('background','red'); // filled color to all div has p tag
+
+            $('div:has(p)').text("hey.... i am here")
+
+        })
+
+    </script>
+</body>
+</html>
